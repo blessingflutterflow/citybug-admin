@@ -52,7 +52,7 @@ export default function PricingPage() {
 
   if (loading) {
     return (
-      <div className="p-8">
+      <div className="p-4 sm:p-6 lg:p-8">
         <div className="animate-pulse">
           <div className="h-8 w-48 bg-gray-200 rounded mb-4"></div>
           <div className="h-4 w-64 bg-gray-200 rounded"></div>
@@ -62,11 +62,11 @@ export default function PricingPage() {
   }
 
   return (
-    <div className="p-8 max-w-4xl">
+    <div className="p-4 sm:p-6 lg:p-8 max-w-4xl">
       {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-2xl font-bold text-gray-900">Pricing Configuration</h1>
-        <p className="text-gray-500 mt-1">Set your ride pricing rates. Changes apply immediately to the app.</p>
+      <div className="mb-6 sm:mb-8">
+        <h1 className="text-xl sm:text-2xl font-bold text-gray-900">Pricing Configuration</h1>
+        <p className="text-gray-500 mt-1 text-sm sm:text-base">Set your ride pricing rates. Changes apply immediately to the app.</p>
       </div>
 
       {/* Message */}
@@ -76,10 +76,10 @@ export default function PricingPage() {
         </div>
       )}
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8">
         {/* Pricing Form */}
-        <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
-          <h2 className="text-lg font-semibold text-gray-900 mb-6">Fare Settings</h2>
+        <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-4 sm:p-6">
+          <h2 className="text-lg font-semibold text-gray-900 mb-4 sm:mb-6">Fare Settings</h2>
           
           <div className="space-y-5">
             {/* Base Fare */}
@@ -156,8 +156,8 @@ export default function PricingPage() {
         </div>
 
         {/* Fare Calculator Preview */}
-        <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
-          <h2 className="text-lg font-semibold text-gray-900 mb-6">Fare Calculator Preview</h2>
+        <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-4 sm:p-6">
+          <h2 className="text-lg font-semibold text-gray-900 mb-4 sm:mb-6">Fare Calculator Preview</h2>
           
           <div className="space-y-6">
             {/* Distance Input */}

@@ -60,22 +60,22 @@ export default function UsersPage() {
   );
 
   return (
-    <div className="p-8">
+    <div className="p-4 sm:p-6 lg:p-8">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 sm:mb-8">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Users</h1>
-          <p className="text-gray-500 mt-1">{users.length} total users | {bannedUsers.size} banned</p>
+          <h1 className="text-xl sm:text-2xl font-bold text-gray-900">Users</h1>
+          <p className="text-gray-500 mt-1 text-sm sm:text-base">{users.length} total users | {bannedUsers.size} banned</p>
         </div>
         
         {/* Search */}
-        <div className="relative max-w-sm">
+        <div className="relative w-full sm:max-w-sm">
           <input
             type="text"
             placeholder="Search users..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C2185B] focus:border-[#C2185B] outline-none transition-colors"
+            className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C2185B] focus:border-[#C2185B] outline-none transition-colors text-sm sm:text-base"
           />
           <svg 
             className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" 
@@ -92,7 +92,7 @@ export default function UsersPage() {
       {/* Users Table */}
       <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
         {loading ? (
-          <div className="p-8">
+          <div className="p-4 sm:p-8">
             <div className="animate-pulse space-y-4">
               {[...Array(5)].map((_, i) => (
                 <div key={i} className="flex items-center gap-4">
@@ -106,7 +106,7 @@ export default function UsersPage() {
             </div>
           </div>
         ) : filteredUsers.length === 0 ? (
-          <div className="p-12 text-center">
+          <div className="p-8 sm:p-12 text-center">
             <svg className="mx-auto h-12 w-12 text-gray-300" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12.375 4.25a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0z" />
             </svg>

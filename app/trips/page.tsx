@@ -26,22 +26,22 @@ export default function TripsPage() {
   );
 
   return (
-    <div className="p-8">
+    <div className="p-4 sm:p-6 lg:p-8">
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 sm:mb-8">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Trips</h1>
-          <p className="text-gray-500 mt-1">{trips.length} total trips</p>
+          <h1 className="text-xl sm:text-2xl font-bold text-gray-900">Trips</h1>
+          <p className="text-gray-500 mt-1 text-sm sm:text-base">{trips.length} total trips</p>
         </div>
         
         {/* Search */}
-        <div className="relative max-w-sm">
+        <div className="relative w-full sm:max-w-sm">
           <input
             type="text"
             placeholder="Search trips..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C2185B] focus:border-[#C2185B] outline-none transition-colors"
+            className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#C2185B] focus:border-[#C2185B] outline-none transition-colors text-sm sm:text-base"
           />
           <svg 
             className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" 
@@ -58,7 +58,7 @@ export default function TripsPage() {
       {/* Trips Table */}
       <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
         {loading ? (
-          <div className="p-8">
+          <div className="p-4 sm:p-8">
             <div className="animate-pulse space-y-4">
               {[...Array(5)].map((_, i) => (
                 <div key={i} className="flex items-center gap-4">
@@ -72,7 +72,7 @@ export default function TripsPage() {
             </div>
           </div>
         ) : filteredTrips.length === 0 ? (
-          <div className="p-12 text-center">
+          <div className="p-8 sm:p-12 text-center">
             <svg className="mx-auto h-12 w-12 text-gray-300" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
